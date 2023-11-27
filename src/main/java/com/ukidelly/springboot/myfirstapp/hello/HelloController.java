@@ -18,7 +18,8 @@ public class HelloController {
     @GetMapping("/say-hello-html")
     @ResponseBody
     public String sayHelloHtml() {
-        String sb = "<html>" +
+
+        return "<html>" +
                 "<head>" +
                 "<title>" +
                 "My First Html Page" +
@@ -28,8 +29,6 @@ public class HelloController {
                 "My First html Page with Body" +
                 "</body>" +
                 "</html>";
-
-        return sb;
     }
 
 
