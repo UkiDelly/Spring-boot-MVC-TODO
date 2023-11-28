@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+<p>Welcome to Todo List</p>
+<p th:each="todo : ${todos}" th:text="${todo}"></p>
+</body>
+</html>
