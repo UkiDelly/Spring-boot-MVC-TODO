@@ -6,19 +6,20 @@
 </head>
 <link href="webjars/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
 <body>
-Welcome to Login Page!
+<div class="container">
+    Welcome to Login Page!
 
-<!--show the name in the model object-->
-<p th:text="${name}"></p>
+    <!--show the name in the model object-->
+    <p th:text="${name}"></p>
 
-<!--login view-->
-<form method="post">
-    <pre th:text="${errorMessage}"></pre>
-    <input name="username" type="text"/>
-    <input name="password" type="password"/>
-    <input type="submit" value="Login"/>
-</form>
-
+    <!--login view-->
+    <form class="form-control" method="post">
+        <pre th:text="${errorMessage}"></pre>
+        <input name="username" type="text"/>
+        <input name="password" type="password"/>
+        <input type="submit" value="Login"/>
+    </form>
+</div>
 <script src="webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
 <script src="webjars/jquery/3.7.1/src/jquery.js"></script>
 </body>
