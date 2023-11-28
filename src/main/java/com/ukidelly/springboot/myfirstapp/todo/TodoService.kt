@@ -14,6 +14,20 @@ class TodoService {
 			"Learn AWS",
 			LocalDate.now().plusYears(1),
 			false
+		),
+		Todo(
+			2,
+			"admin",
+			"Learn Ktor",
+			LocalDate.now().plusYears(1),
+			false
+		),
+		Todo(
+			3,
+			"admin",
+			"Learn Flutter",
+			LocalDate.now().plusYears(1),
+			false
 		)
 	)
 	
