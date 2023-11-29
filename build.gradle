@@ -36,7 +36,8 @@ dependencies {
     // jQuery
     implementation("org.webjars:jquery:3.7.1")
 
-
+    // validation
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 tasks.named('bootBuildImage') {

@@ -32,14 +32,15 @@ class TodoService {
 	)
 	
 	
-	fun findTodoByUsername(username: String): List<Todo> {
-		return todos.filter { it.username == username }
-	}
+	fun findTodoByUsername(username: String): List<Todo> = todos.filter { it.username == username }
+	
 	
 	fun addTodo(username: String, desc: String) {
 		val todo = Todo(todos.size + 1, username, desc, LocalDate.now().plusYears(1), false)
 		todos.add(todo)
 	}
 	
+	
+	fun deleteTodo(id: Int) = todos.removeIf { it.id == id }
 	
 }

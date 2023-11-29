@@ -25,10 +25,16 @@ class TodoController(val todoService: TodoService) {
 	}
 	
 	@PostMapping("/add-todo")
-	
 	fun saveTodo(model: Model, @RequestParam description: String): String {
 		val username = model.getAttribute("username") as String
 		todoService.addTodo(username, description)
+		return "redirect:/todo"
+	}
+	
+	
+	@GetMapping("/delete-todo")
+	fun deleteTodo(model: Model, @RequestParam id: Int): String {
+		todoService.deleteTodo(id)
 		return "redirect:/todo"
 	}
 }

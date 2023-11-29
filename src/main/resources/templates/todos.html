@@ -18,6 +18,7 @@
             <th>description</th>
             <th>target date</th>
             <th>is done</th>
+
         </tr>
         </thead>
 
@@ -27,6 +28,7 @@
             <td th:text="${todo.description}"></td>
             <td th:text="${todo.targetDate}"></td>
             <td th:text="${todo.isDone}"></td>
+            <th><a class="btn btn-warning " th:href="|/todo/delete-todo?id=${todo.id}|"> DELETE</a></th>
         </tr>
         </tbody>
     </table>
