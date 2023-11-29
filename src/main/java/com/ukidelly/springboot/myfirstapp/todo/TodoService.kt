@@ -7,7 +7,7 @@ import java.time.LocalDate
 @Service
 class TodoService {
 	
-	private val todos: List<Todo> = mutableListOf(
+	private val todos: MutableList<Todo> = mutableListOf(
 		Todo(
 			1,
 			"admin",
@@ -34,6 +34,11 @@ class TodoService {
 	
 	fun findTodoByUsername(username: String): List<Todo> {
 		return todos.filter { it.username == username }
+	}
+	
+	fun addTodo(username: String, desc: String) {
+		val todo = Todo(todos.size + 1, username, desc, LocalDate.now().plusYears(1), false)
+		todos.add(todo)
 	}
 	
 	
