@@ -40,7 +40,12 @@ class TodoService {
 		todos.add(todo)
 	}
 	
-	
 	fun deleteTodo(id: Int) = todos.removeIf { it.id == id }
 	
+	fun findTodoById(id: Int): Todo = todos.first { it.id == id }
+	
+	fun updateTodo(todo: Todo) {
+		var oldTodo = findTodoById(todo.id)
+		val newTodo = oldTodo.copy(description = todo.description, targetDate = todo.targetDate)
+	}
 }

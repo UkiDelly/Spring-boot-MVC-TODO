@@ -32,6 +32,7 @@ dependencies {
 
     // 부트스트랩
     implementation("org.webjars:bootstrap:5.3.2")
+    implementation("org.webjars:bootstrap-datepicker:1.9.0")
 
     // jQuery
     implementation("org.webjars:jquery:3.7.1")

@@ -37,4 +37,10 @@ class TodoController(val todoService: TodoService) {
 		todoService.deleteTodo(id)
 		return "redirect:/todo"
 	}
+	
+	@GetMapping("/update-todo")
+	fun updateTodo(model: Model, @RequestParam id: Int): String {
+		val todo = todoService.findTodoById(id)
+		return "todo"
+	}
 }
