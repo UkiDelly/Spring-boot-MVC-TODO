@@ -4,6 +4,7 @@ package com.ukidelly.springboot.myfirstapp;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -15,10 +16,15 @@ public class SpringSecurityConfiguration {
     // User 만들기
     @Bean
     public InMemoryUserDetailsManager createUserDetailsManager() {
-        var userDetails = User.builder().passwordEncoder(input -> passwordEncoder().encode(input)).username("admin").password("admin").roles("USER", "ADMIN").build();
+        var adminUser = createNewUser("admin", "admin");
+        var testUser = createNewUser("test", "test");
+        
+        return new InMemoryUserDetailsManager(adminUser, testUser);
+    }
 
 
-        return new InMemoryUserDetailsManager(userDetails);
+    private UserDetails createNewUser(String username, String password) {
+        return User.builder().passwordEncoder(input -> passwordEncoder().encode(input)).username(username).password(password).roles("USER", "ADMIN").build();
     }
 
     // 비번 인코더
