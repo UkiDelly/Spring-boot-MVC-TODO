@@ -9,6 +9,7 @@ class TodoService {
 	
 	private val todos: MutableList<Todo> = mutableListOf(
 		Todo(
+			
 			1,
 			"admin",
 			"Learn AWS",
@@ -48,7 +49,7 @@ class TodoService {
 	
 	fun updateTodo(todo: Todo) {
 		val oldTodo = findTodoById(todo.id)
-		val newTodo =
-			oldTodo.copy(description = todo.description, targetDate = todo.targetDate)
+		
+		
 	}
 }
