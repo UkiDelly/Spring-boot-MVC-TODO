@@ -13,14 +13,15 @@ class TodoController(val todoService: TodoService) {
 	
 	@GetMapping
 	fun todoList(model: Model): String {
-		
-		val todos = todoService.findTodoByUsername("admin")
+		val username = model.getAttribute("username") as String
+		val todos = todoService.findTodoByUsername(username)
 		model.addAttribute("todos", todos)
 		return "todos"
 	}
 	
 	@GetMapping("/add-todo")
 	fun showTodoView(model: Model): String {
+		
 		return "todo"
 	}
 	

@@ -32,11 +32,13 @@ class TodoService {
 	)
 	
 	
-	fun findTodoByUsername(username: String): List<Todo> = todos.filter { it.username == username }
+	fun findTodoByUsername(username: String): List<Todo> =
+		todos.filter { it.username == username }
 	
 	
 	fun addTodo(username: String, desc: String) {
-		val todo = Todo(todos.size + 1, username, desc, LocalDate.now().plusYears(1), false)
+		val todo =
+			Todo(todos.size + 1, username, desc, LocalDate.now().plusYears(1), false)
 		todos.add(todo)
 	}
 	
@@ -45,7 +47,8 @@ class TodoService {
 	fun findTodoById(id: Int): Todo = todos.first { it.id == id }
 	
 	fun updateTodo(todo: Todo) {
-		var oldTodo = findTodoById(todo.id)
-		val newTodo = oldTodo.copy(description = todo.description, targetDate = todo.targetDate)
+		val oldTodo = findTodoById(todo.id)
+		val newTodo =
+			oldTodo.copy(description = todo.description, targetDate = todo.targetDate)
 	}
 }
